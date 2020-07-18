@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="MainView" prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainWindowController">
+   <MenuBar>
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#openImage" text="Open" />
+           <MenuItem mnemonicParsing="false" text="Import" />
+           <MenuItem mnemonicParsing="false" text="Export" />
+           <MenuItem mnemonicParsing="false" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+    <SplitPane dividerPositions="0.2993311036789298" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+             <children>
+                <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn prefWidth="60.0" text="Name" />
+                    <TableColumn prefWidth="40.0" text="X" />
+                    <TableColumn prefWidth="40.0" text="Y" />
+                    <TableColumn prefWidth="60.0" text="Colour" />
+                  </columns>
+                </TableView>
+             </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+             <children>
+                <GridPane prefHeight="598.0" prefWidth="556.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                    <RowConstraints maxHeight="498.0" minHeight="10.0" prefHeight="299.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="337.0" minHeight="10.0" prefHeight="299.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                   <children>
+                      <Pane prefHeight="300.0" prefWidth="300.0">
+                          <fx:include fx:id="ImageViewerTopLeft" source="ImageViewer.fxml" />
+                      </Pane>
+                      <Pane prefHeight="300.0" prefWidth="300.0" GridPane.columnIndex="1">
+                          <fx:include fx:id="ImageViewerTopRight" source="ImageViewer.fxml" />
+                      </Pane>
+                      <Pane prefHeight="300.0" prefWidth="300.0" GridPane.rowIndex="1">
+                          <fx:include fx:id="ImageViewerBottomLeft" source="ImageViewer.fxml" />
+                      </Pane>
+                      <Pane prefHeight="300.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <fx:include fx:id="ImageViewerBottomRight" source="ImageViewer.fxml" />
+                      </Pane>
+                   </children>
+                </GridPane>
+             </children></AnchorPane>
+      </items>
+    </SplitPane>
+</VBox>
