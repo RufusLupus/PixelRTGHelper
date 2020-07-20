@@ -1,4 +1,4 @@
-package sample;
+package PixelRTGHelper;
 
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;

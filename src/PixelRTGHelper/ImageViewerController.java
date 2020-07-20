@@ -1,4 +1,4 @@
-package sample;
+package PixelRTGHelper;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
