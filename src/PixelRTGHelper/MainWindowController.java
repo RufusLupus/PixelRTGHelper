@@ -6,6 +6,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class MainWindowController {
 
@@ -20,6 +21,17 @@ public class MainWindowController {
     @FXML
     private ImageViewerController ImageViewerBottomRightController;
 
+    private ArrayList<ImageViewerController> imageViewerControllers;
+
+    @FXML
+    public void initialize(){
+        imageViewerControllers = new ArrayList<ImageViewerController>();
+        imageViewerControllers.add(ImageViewerTopLeftController);
+        imageViewerControllers.add(ImageViewerTopRightController);
+        imageViewerControllers.add(ImageViewerBottomLeftController);
+        imageViewerControllers.add(ImageViewerBottomRightController);
+    }
+
     @FXML
     private VBox MainView;
     public void openImage() {
@@ -30,9 +42,6 @@ public class MainWindowController {
             // TODO: dispose
         }
         CurrentImage = new Image(file.toURI().toString());
-        ImageViewerTopLeftController.setImage(CurrentImage);
-        ImageViewerTopRightController.setImage(CurrentImage);
-        ImageViewerBottomLeftController.setImage(CurrentImage);
-        ImageViewerBottomRightController.setImage(CurrentImage);
+        imageViewerControllers.forEach((controller) -> controller.setImage(CurrentImage));
     }
 }
