@@ -6,8 +6,8 @@ import javafx.scene.image.ImageView;
 
 public class ImageViewerController {
     @FXML
-    private ImageView ImageViewMain;
+    private ImageView ImageView;
     public void setImage(Image image){
-        ImageViewMain.setImage(image);
+        ImageView.setImage(image);
     }
 }
