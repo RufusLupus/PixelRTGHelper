@@ -3,56 +3,56 @@ package PixelRTGHelper;
 import javafx.beans.property.*;
 
 public class MarkPoint {
-    private StringProperty nameProperty;
-    private DoubleProperty positionXProperty;
-    private DoubleProperty positionYProperty;
+    private StringProperty name;
+    private DoubleProperty positionX;
+    private DoubleProperty positionY;
 
     public MarkPoint() {
-        this.nameProperty = new SimpleStringProperty("New point");
-        this.positionXProperty = new SimpleDoubleProperty(1.0);
-        this.positionYProperty = new SimpleDoubleProperty(1.0);
+        this.name = new SimpleStringProperty("New point");
+        this.positionX = new SimpleDoubleProperty(1.0);
+        this.positionY = new SimpleDoubleProperty(1.0);
     }
 
     public MarkPoint(String name, double x, double y) {
-        this.nameProperty = new SimpleStringProperty(name);
-        this.positionXProperty = new SimpleDoubleProperty(x);
-        this.positionYProperty = new SimpleDoubleProperty(y);
+        this.name = new SimpleStringProperty(name);
+        this.positionX = new SimpleDoubleProperty(x);
+        this.positionY = new SimpleDoubleProperty(y);
     }
 
-    public StringProperty getNameProperty() {
-        return nameProperty;
+    public StringProperty nameProperty() {
+        return name;
     }
 
-    public DoubleProperty getPositionXProperty() {
-        return positionXProperty;
+    public DoubleProperty positionXProperty() {
+        return positionX;
     }
 
-    public DoubleProperty getPositionYProperty() {
-        return positionYProperty;
+    public DoubleProperty positionYProperty() {
+        return positionY;
     }
 
     public String getName() {
-        return nameProperty.get();
+        return name.get();
     }
 
     public void setName(String str) {
-        nameProperty.set(str);
+        name.set(str);
     }
 
     public double getPositionX() {
-        return positionXProperty.get();
+        return positionX.get();
     }
 
     public void setPositionX(double x) {
-        positionXProperty.set(x);
+        positionX.set(x);
     }
 
     public double getPositionY() {
-        return positionYProperty.get();
+        return positionY.get();
     }
 
     public void setPositionY(double y) {
-        positionYProperty.set(y);
+        positionY.set(y);
     }
 
 }

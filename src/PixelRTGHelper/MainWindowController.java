@@ -53,18 +53,21 @@ public class MainWindowController {
         imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
         //MarkPointTable.setItems(markPointContext.getPoints());
         MarkPointTable.itemsProperty().bindBidirectional(markPointContext.getMarkPointsProperty());
+
         MarkPointTableName.setCellValueFactory(new PropertyValueFactory<MarkPoint, String>("name"));
         MarkPointTableName.setCellFactory(TextFieldTableCell.forTableColumn());
         MarkPointTableName.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setName(e.getNewValue());
         });
         MarkPointTableName.setEditable(true);
+
         MarkPointTablePositionX.setCellValueFactory(new PropertyValueFactory<MarkPoint, Double>("positionX"));
         MarkPointTablePositionX.setCellFactory(TextFieldTableCell.<MarkPoint, Double>forTableColumn(new DoubleStringConverter()));
         MarkPointTablePositionX.setOnEditCommit(e -> {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPositionX(e.getNewValue());
         });
         MarkPointTablePositionX.setEditable(true);
+
         MarkPointTablePositionY.setCellValueFactory(new PropertyValueFactory<MarkPoint, Double>("positionY"));
         MarkPointTablePositionY.setCellFactory(TextFieldTableCell.<MarkPoint, Double>forTableColumn(new DoubleStringConverter()));
         MarkPointTablePositionY.setOnEditCommit(e -> {

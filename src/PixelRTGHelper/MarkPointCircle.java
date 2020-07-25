@@ -19,8 +19,8 @@ public class MarkPointCircle extends Circle {
         MarkPointCircle markPointCircle = new MarkPointCircle();
         markPointCircle.markPoint = markPoint;
         markPointCircle.parentPane = parentPane;
-        markPointCircle.centerXProperty().bindBidirectional(markPoint.getPositionXProperty());
-        markPointCircle.centerYProperty().bindBidirectional(markPoint.getPositionYProperty());
+        markPointCircle.centerXProperty().bindBidirectional(markPoint.positionXProperty());
+        markPointCircle.centerYProperty().bindBidirectional(markPoint.positionYProperty());
 
         markPointCircle.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
             @Override
@@ -40,5 +40,9 @@ public class MarkPointCircle extends Circle {
     private void setPosition(double x, double y) {
         this.setCenterX(x);
         this.setCenterY(y);
+        //markPoint.setPositionX(x);
+        //markPoint.setPositionY(y);
+        //markPoint.getPositionXProperty().setValue(x);
+        //markPoint.getPositionYProperty().setValue(y);
     }
 }
