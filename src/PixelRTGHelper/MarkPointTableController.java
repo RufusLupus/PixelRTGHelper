@@ -1,12 +1,24 @@
 package PixelRTGHelper;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DoubleStringConverter;
 
-public class MarkPointTableController {
+import java.awt.event.MouseEvent;
+
+public class MarkPointTableController implements IMarkPointSharer {
+
+    private MarkPointContext context;
+
+    @FXML
+    private TableView<MarkPoint> MarkPointTable;
 
     @FXML
     private TableColumn<MarkPoint, String> MarkPointTableName;
@@ -14,6 +26,11 @@ public class MarkPointTableController {
     private TableColumn<MarkPoint, Double > MarkPointTablePositionX;
     @FXML
     private TableColumn<MarkPoint, Double> MarkPointTablePositionY;
+
+    @FXML
+    private ContextMenu MarkPointContextMenu;
+    @FXML
+    private MenuItem MarkPointContextMenuRemove;
 
     @FXML
     public void initialize() {
@@ -37,5 +54,21 @@ public class MarkPointTableController {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPositionY(e.getNewValue());
         });
         MarkPointTablePositionY.setEditable(true);
+
+        MarkPointContextMenuRemove.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                MarkPointTable.getItems().remove(MarkPointTable.getSelectionModel().getSelectedItem());
+            }
+        });
+    }
+
+    @Override
+    public void setContext(MarkPointContext context) {
+        this.context = context;
+        setBindings();
+    }
+    private void setBindings() {
+        MarkPointTable.itemsProperty().bindBidirectional(context.markPointsProperty());
     }
 }

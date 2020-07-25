@@ -3,7 +3,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.*?>
 
-<TableView prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MarkPointTableController">
+<TableView fx:id="MarkPointTable" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MarkPointTableController">
+    <contextMenu>
+        <ContextMenu fx:id="MarkPointContextMenu">
+            <items>
+                <MenuItem text="Remove" fx:id="MarkPointContextMenuRemove"/>
+            </items>
+        </ContextMenu>
+    </contextMenu>
     <columns>
         <TableColumn fx:id="MarkPointTableName" prefWidth="110.0" text="Name">
             <cellValueFactory>

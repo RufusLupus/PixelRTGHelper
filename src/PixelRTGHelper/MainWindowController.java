@@ -24,7 +24,7 @@ public class MainWindowController {
     private MarkPointContext markPointContext;
 
     @FXML
-    private TableView<MarkPoint> MarkPointTable;
+    private MarkPointTableController MarkPointTableController;
 
     @FXML
     private ImageViewerController ImageViewerTopLeftController;
@@ -45,10 +45,7 @@ public class MainWindowController {
         imageViewerControllers.add(ImageViewerBottomLeftController);
         imageViewerControllers.add(ImageViewerBottomRightController);
         markPointContext = new MarkPointContext();
-        imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
-        //MarkPointTable.setItems(markPointContext.getPoints());
-        MarkPointTable.itemsProperty().bindBidirectional(markPointContext.getMarkPointsProperty());
-
+        setSubcontrollersContext();
     }
 
     @FXML
@@ -62,5 +59,10 @@ public class MainWindowController {
         }
         CurrentImage = new Image(file.toURI().toString());
         imageViewerControllers.forEach((controller) -> controller.setImage(CurrentImage));
+    }
+
+    private void setSubcontrollersContext() {
+        imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
+        MarkPointTableController.setContext(markPointContext);
     }
 }
