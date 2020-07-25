@@ -24,25 +24,7 @@
     </MenuBar>
     <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
         <children>
-            <TableView fx:id="MarkPointTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0">
-                <columns>
-                    <TableColumn fx:id="MarkPointTableName" prefWidth="60.0" text="Name">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="name" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn fx:id="MarkPointTablePositionX" prefWidth="40.0" text="X">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="positionX" />
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn fx:id="MarkPointTablePositionY" prefWidth="40.0" text="Y">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="positionY" />
-                        </cellValueFactory>
-                    </TableColumn>
-                </columns>
-            </TableView>
+            <fx:include source="MarkPointTable.fxml" fx:id="MarkPointTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0"/>
             <GridPane fx:id="ImageViewGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
                 <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />

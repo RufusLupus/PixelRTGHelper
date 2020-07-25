@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<TableView xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="PixelRTGHelper.MarkPointTableController"
+           prefHeight="400.0" prefWidth="600.0">
+    <columns>
+        <TableColumn fx:id="MarkPointTableName" prefWidth="60.0" text="Name">
+            <cellValueFactory>
+                <PropertyValueFactory property="name" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="MarkPointTablePositionX" prefWidth="40.0" text="X">
+            <cellValueFactory>
+                <PropertyValueFactory property="positionX" />
+            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="MarkPointTablePositionY" prefWidth="40.0" text="Y">
+            <cellValueFactory>
+                <PropertyValueFactory property="positionY" />
+            </cellValueFactory>
+        </TableColumn>
+    </columns>
+</TableView>
