@@ -70,5 +70,14 @@ public class MarkPointTableController implements IMarkPointSharer {
     }
     private void setBindings() {
         MarkPointTable.itemsProperty().bindBidirectional(context.markPointsProperty());
+        context.registerListener(change -> {
+            while(change.next())
+            {
+                if (change.wasRemoved())
+                {
+                    
+                }
+            }
+        });
     }
 }

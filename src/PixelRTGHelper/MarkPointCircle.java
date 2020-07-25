@@ -34,15 +34,13 @@ public class MarkPointCircle extends Circle {
         return markPointCircle;
     }
 
-    private void removeItself() {
-        parentPane.getChildren().remove(this);
-    }
+
     private void setPosition(double x, double y) {
         this.setCenterX(x);
         this.setCenterY(y);
-        //markPoint.setPositionX(x);
-        //markPoint.setPositionY(y);
-        //markPoint.getPositionXProperty().setValue(x);
-        //markPoint.getPositionYProperty().setValue(y);
+    }
+
+    public MarkPoint getMarkPoint() {
+        return markPoint;
     }
 }
