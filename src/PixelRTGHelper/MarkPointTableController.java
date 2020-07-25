@@ -23,7 +23,7 @@ public class MarkPointTableController implements IMarkPointSharer {
     @FXML
     private TableColumn<MarkPoint, String> MarkPointTableName;
     @FXML
-    private TableColumn<MarkPoint, Double > MarkPointTablePositionX;
+    private TableColumn<MarkPoint, Double> MarkPointTablePositionX;
     @FXML
     private TableColumn<MarkPoint, Double> MarkPointTablePositionY;
 
@@ -68,16 +68,8 @@ public class MarkPointTableController implements IMarkPointSharer {
         this.context = context;
         setBindings();
     }
+
     private void setBindings() {
         MarkPointTable.itemsProperty().bindBidirectional(context.markPointsProperty());
-        context.registerListener(change -> {
-            while(change.next())
-            {
-                if (change.wasRemoved())
-                {
-                    
-                }
-            }
-        });
     }
 }

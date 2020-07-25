@@ -38,7 +38,7 @@ public class MainWindowController {
     private ArrayList<ImageViewerController> imageViewerControllers;
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         imageViewerControllers = new ArrayList<ImageViewerController>();
         imageViewerControllers.add(ImageViewerTopLeftController);
         imageViewerControllers.add(ImageViewerTopRightController);
@@ -50,6 +50,7 @@ public class MainWindowController {
 
     @FXML
     private VBox MainView;
+
     public void openImage() {
         FileChooser filePicker = new FileChooser();
         filePicker.setTitle("Open image");

@@ -34,6 +34,7 @@ public class MarkPointContext {
     public ListProperty<MarkPoint> markPointsProperty() {
         return markPointsProperty;
     }
+
     public ObservableList getMarkPointsProperty() {
         return markPointsProperty.get();
     }

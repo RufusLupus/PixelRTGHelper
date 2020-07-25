@@ -21,7 +21,8 @@ public class ImageViewerController implements IMarkPointSharer {
 
     @FXML
     private ImageView ImageView;
-    public void setImage(Image image){
+
+    public void setImage(Image image) {
         ImageView.setImage(image);
         MarkPane.setPrefSize(image.getWidth(), image.getHeight());
         MarkPane.setMaxSize(image.getWidth(), image.getHeight());
@@ -34,15 +35,14 @@ public class ImageViewerController implements IMarkPointSharer {
         this.context.registerListener(new ListChangeListener() {
             @Override
             public void onChanged(Change change) {
-                while(change.next()) {
+                while (change.next()) {
                     if (change.wasAdded()) {
                         addPointCircle(context.getPoints().get(context.getPoints().size() - 1));
-                    }
-                    else if (change.wasRemoved()) {
+                    } else if (change.wasRemoved()) {
                         Collection removedElements = change.getRemoved();
                         for (Object probablyMarkPoint : removedElements) {
                             if (probablyMarkPoint instanceof MarkPoint) {
-                                MarkPoint markPoint = (MarkPoint)probablyMarkPoint;
+                                MarkPoint markPoint = (MarkPoint) probablyMarkPoint;
                                 removePointCircle(markPoint);
                             }
                         }
@@ -61,16 +61,10 @@ public class ImageViewerController implements IMarkPointSharer {
     private void addPointCircle(MarkPoint markPoint) {
         MarkPointCircle.Create(markPoint, MarkPane);
     }
+
     private void removePointCircle(MarkPoint markPoint) {
         // ugly way but works
         ArrayList<MarkPointCircle> pointsToRemove = new ArrayList<MarkPointCircle>();
-        /*MarkPane.getChildren().forEach(child -> {
-            MarkPointCircle markPointCircle = (MarkPointCircle)child;
-            if (markPointCircle != null)
-            {
-                pointsToRemove.add(markPointCircle);
-            }
-        });*/
         MarkPane.getChildren().removeIf(node -> {
             if (node instanceof MarkPointCircle) {
                 MarkPointCircle markPointCircle = (MarkPointCircle) node;
@@ -78,15 +72,14 @@ public class ImageViewerController implements IMarkPointSharer {
                     return true;
                 else
                     return false;
-            }
-            else
+            } else
                 return false;
         });
     }
 
     @FXML
     public void initialize() {
-        ImageView.setOnMouseClicked( (e) -> {
+        ImageView.setOnMouseClicked((e) -> {
             addPoint(e.getX(), e.getY());
         });
     }

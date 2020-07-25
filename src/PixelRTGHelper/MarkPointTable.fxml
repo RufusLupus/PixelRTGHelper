@@ -3,7 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.*?>
 
-<TableView fx:id="MarkPointTable" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MarkPointTableController">
+<TableView fx:id="MarkPointTable" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MarkPointTableController">
     <contextMenu>
         <ContextMenu fx:id="MarkPointContextMenu">
             <items>
@@ -14,17 +15,17 @@
     <columns>
         <TableColumn fx:id="MarkPointTableName" prefWidth="110.0" text="Name">
             <cellValueFactory>
-                <PropertyValueFactory property="name" />
+                <PropertyValueFactory property="name"/>
             </cellValueFactory>
         </TableColumn>
         <TableColumn fx:id="MarkPointTablePositionX" prefWidth="40.0" text="X">
             <cellValueFactory>
-                <PropertyValueFactory property="positionX" />
+                <PropertyValueFactory property="positionX"/>
             </cellValueFactory>
         </TableColumn>
         <TableColumn fx:id="MarkPointTablePositionY" prefWidth="40.0" text="Y">
             <cellValueFactory>
-                <PropertyValueFactory property="positionY" />
+                <PropertyValueFactory property="positionY"/>
             </cellValueFactory>
         </TableColumn>
     </columns>

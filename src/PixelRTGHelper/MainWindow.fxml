@@ -4,62 +4,78 @@
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="MainView" minHeight="480.0" minWidth="600.0" prefHeight="690.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MainWindowController">
+<VBox fx:id="MainView" minHeight="480.0" minWidth="600.0" prefHeight="690.0" prefWidth="825.0"
+      xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="PixelRTGHelper.MainWindowController">
     <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
         <menus>
             <Menu mnemonicParsing="false" text="File">
                 <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openImage" text="Open" />
-                    <MenuItem mnemonicParsing="false" text="Import" />
-                    <MenuItem mnemonicParsing="false" text="Export" />
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem mnemonicParsing="false" onAction="#openImage" text="Open"/>
+                    <MenuItem mnemonicParsing="false" text="Import"/>
+                    <MenuItem mnemonicParsing="false" text="Export"/>
+                    <MenuItem mnemonicParsing="false" text="Close"/>
                 </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
                 <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="About"/>
                 </items>
             </Menu>
         </menus>
     </MenuBar>
     <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
         <children>
-            <fx:include source="MarkPointTable.fxml" fx:id="MarkPointTable" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0"/>
-            <GridPane fx:id="ImageViewGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
+            <fx:include source="MarkPointTable.fxml" fx:id="MarkPointTable" editable="true"
+                        maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0"/>
+            <GridPane fx:id="ImageViewGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308"
+                      maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
                 <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                       percentWidth="50.0" prefWidth="100.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                       prefWidth="100.0"/>
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" percentHeight="50.0" prefHeight="299.0" vgrow="SOMETIMES" />
-                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="299.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" percentHeight="50.0"
+                                    prefHeight="299.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="299.0"
+                                    vgrow="SOMETIMES"/>
                 </rowConstraints>
                 <children>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0"
+                                GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                         <content>
-                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerTopLeft" source="ImageViewer.fxml" />
+                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                       prefHeight="0.0" prefWidth="0.0">
+                                <fx:include fx:id="ImageViewerTopLeft" source="ImageViewer.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1"
+                                GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                         <content>
-                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerTopRight" source="ImageViewer.fxml" />
+                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                       prefHeight="0.0" prefWidth="0.0">
+                                <fx:include fx:id="ImageViewerTopRight" source="ImageViewer.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0"
+                                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         <content>
-                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerBottomLeft" source="ImageViewer.fxml" />
+                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                       prefHeight="0.0" prefWidth="0.0">
+                                <fx:include fx:id="ImageViewerBottomLeft" source="ImageViewer.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1"
+                                GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         <content>
-                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerBottomRight" source="ImageViewer.fxml" />
+                            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+                                       prefHeight="0.0" prefWidth="0.0">
+                                <fx:include fx:id="ImageViewerBottomRight" source="ImageViewer.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
