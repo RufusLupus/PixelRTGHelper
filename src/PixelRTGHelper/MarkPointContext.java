@@ -28,7 +28,7 @@ public class MarkPointContext {
 
     public void registerListener(ListChangeListener listener) {
         observablePoints.addListener(listener);
-        
+
     }
 
     public ListProperty<MarkPoint> getMarkPointsProperty() {
