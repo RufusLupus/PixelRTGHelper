@@ -13,7 +13,7 @@ public class MarkPointContext {
     private ArrayList<MarkPoint> markPoints;
     private ObservableList<MarkPoint> observablePoints;
 
-    public List<MarkPoint> getPoints() {
+    public ObservableList<MarkPoint> getPoints() {
         return observablePoints;
     }
 

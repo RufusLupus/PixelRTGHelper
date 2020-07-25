@@ -1,6 +1,7 @@
 package PixelRTGHelper;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -13,6 +14,8 @@ public class MainWindowController {
     private Image CurrentImage;
     private MarkPointContext markPointContext;
 
+    @FXML
+    private TableView MarkPointTable;
     @FXML
     private ImageViewerController ImageViewerTopLeftController;
     @FXML
@@ -33,6 +36,8 @@ public class MainWindowController {
         imageViewerControllers.add(ImageViewerBottomRightController);
         markPointContext = new MarkPointContext();
         imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
+        MarkPointTable.setItems(markPointContext.getPoints());
+        //MarkPointTable.itemsProperty().bindBidirectional(markPointContext.getPoints());
     }
 
     @FXML

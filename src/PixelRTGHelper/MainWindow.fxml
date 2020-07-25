@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <VBox fx:id="MainView" minHeight="480.0" minWidth="600.0" prefHeight="690.0" prefWidth="825.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PixelRTGHelper.MainWindowController">
     <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
         <menus>
@@ -23,12 +24,23 @@
     </MenuBar>
     <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
         <children>
-            <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0">
+            <TableView fx:id="MarkPointTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="200.0">
                 <columns>
-                    <TableColumn prefWidth="60.0" text="Name" />
-                    <TableColumn prefWidth="40.0" text="X" />
-                    <TableColumn prefWidth="40.0" text="Y" />
-                    <TableColumn prefWidth="60.0" text="Colour" />
+                    <TableColumn prefWidth="60.0" text="Name" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="40.0" text="X"  >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="positionX"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn prefWidth="40.0" text="Y" >
+                        <cellValueFactory>
+                            <PropertyValueFactory property="positionY"/>
+                        </cellValueFactory>
+                    </TableColumn>
                 </columns>
             </TableView>
             <GridPane fx:id="ImageViewGrid" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" HBox.hgrow="ALWAYS">
