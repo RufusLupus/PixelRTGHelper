@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class MainWindowController {
 
     private Image CurrentImage;
+    private MarkPointContext markPointContext;
 
     @FXML
     private ImageViewerController ImageViewerTopLeftController;
@@ -30,6 +31,8 @@ public class MainWindowController {
         imageViewerControllers.add(ImageViewerTopRightController);
         imageViewerControllers.add(ImageViewerBottomLeftController);
         imageViewerControllers.add(ImageViewerBottomRightController);
+        markPointContext = new MarkPointContext();
+        imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
     }
 
     @FXML

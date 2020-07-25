@@ -33,7 +33,11 @@ public class ImageViewerController implements IMarkPointSharer {
         this.context.registerListener(new ListChangeListener() {
             @Override
             public void onChanged(Change change) {
-
+                while(change.next()) {
+                    if (change.wasAdded()) {
+                        
+                    }
+                }
             }
         });
     }
