@@ -55,14 +55,14 @@
                             </StackPane>
                         </content>
                     </ScrollPane>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
                                 <fx:include fx:id="ImageViewerBottomLeft" source="ImageViewer.fxml" />
                             </StackPane>
                         </content>
                     </ScrollPane>
-                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="0.0">
                                 <fx:include fx:id="ImageViewerBottomRight" source="ImageViewer.fxml" />

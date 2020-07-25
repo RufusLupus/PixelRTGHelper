@@ -2,17 +2,29 @@ package PixelRTGHelper;
 
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
+import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+
+import java.awt.*;
 
 public class ImageViewerController implements IMarkPointSharer {
 
     private MarkPointContext context;
 
     @FXML
+    private Pane MarkPane;
+
+    @FXML
     private ImageView ImageView;
     public void setImage(Image image){
         ImageView.setImage(image);
+        MarkPane.setPrefSize(image.getWidth(), image.getHeight());
+        MarkPane.setMaxSize(image.getWidth(), image.getHeight());
+        MarkPane.setMinSize(image.getWidth(), image.getHeight());
     }
 
     @Override
@@ -25,12 +37,14 @@ public class ImageViewerController implements IMarkPointSharer {
             }
         });
     }
-    private void updateVisiblePoints() {
-
-    }
 
     private void addPoint(double x, double y){
         System.out.println("pos: " + x + ", " + y);
+        MarkPoint point = new MarkPoint();
+        point.setColor(Color.ALICEBLUE);
+        point.setName("Some point");
+        point.setPosition(new Point2D(x, y));
+        context.getPoints().add(point);
     }
 
     @FXML
