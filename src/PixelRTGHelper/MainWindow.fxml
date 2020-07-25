@@ -48,7 +48,7 @@
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                                        prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerTopLeft" source="ImageMarker.fxml"/>
+                                <fx:include fx:id="ImageMarkerTopLeft" source="ImageMarker.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
@@ -57,7 +57,7 @@
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                                        prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerTopRight" source="ImageMarker.fxml"/>
+                                <fx:include fx:id="ImageMarkerTopRight" source="ImageMarker.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
@@ -66,7 +66,7 @@
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                                        prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerBottomLeft" source="ImageMarker.fxml"/>
+                                <fx:include fx:id="ImageMarkerBottomLeft" source="ImageMarker.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
@@ -75,7 +75,7 @@
                         <content>
                             <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                                        prefHeight="0.0" prefWidth="0.0">
-                                <fx:include fx:id="ImageViewerBottomRight" source="ImageMarker.fxml"/>
+                                <fx:include fx:id="ImageMarkerBottomRight" source="ImageMarker.fxml"/>
                             </StackPane>
                         </content>
                     </ScrollPane>
