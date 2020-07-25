@@ -2,6 +2,6 @@ package PixelRTGHelper;
 
 import javafx.scene.image.Image;
 
-public interface ImageListener {
+public interface IImageListener {
     void ImageChanged(Image newImage);
 }

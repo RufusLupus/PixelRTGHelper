@@ -2,22 +2,13 @@ package PixelRTGHelper;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
-import javafx.beans.value.ObservableObjectValue;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.Event;
-import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import org.omg.CORBA.Current;
-import sun.plugin.com.event.ListenerProxy;
-import sun.swing.BakedArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 
 public class MarkPointContext {
 
@@ -25,7 +16,7 @@ public class MarkPointContext {
     private ObservableList<MarkPoint> observablePoints;
     private ListProperty<MarkPoint> markPointsProperty;
 
-    private List<ImageListener> imageListeners;
+    private List<IImageListener> imageListeners;
     private Image currentImage;
 
     public ObservableList<MarkPoint> getPoints() {
@@ -36,13 +27,13 @@ public class MarkPointContext {
         markPoints = new ArrayList<MarkPoint>();
         observablePoints = FXCollections.observableList(markPoints);
         markPointsProperty = new SimpleListProperty<MarkPoint>(observablePoints);
-        imageListeners = new ArrayList<ImageListener>();
+        imageListeners = new ArrayList<IImageListener>();
     }
 
     public void registerListener(ListChangeListener listener) {
         observablePoints.addListener(listener);
     }
-    public void registerImageListener(ImageListener listener) {
+    public void registerImageListener(IImageListener listener) {
         imageListeners.add(listener);
     }
 

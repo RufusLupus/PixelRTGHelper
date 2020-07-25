@@ -2,11 +2,9 @@ package PixelRTGHelper;
 
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
-import javafx.geometry.Point2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
@@ -44,7 +42,7 @@ public class ImageMarkerController implements IMarkPointSharer {
                 }
             }
         });
-        this.context.registerImageListener(new ImageListener() {
+        this.context.registerImageListener(new IImageListener() {
             @Override
             public void ImageChanged(Image newImage) {
                 setImage(newImage);
