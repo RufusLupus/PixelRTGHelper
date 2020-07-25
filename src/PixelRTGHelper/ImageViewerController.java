@@ -35,7 +35,7 @@ public class ImageViewerController implements IMarkPointSharer {
             public void onChanged(Change change) {
                 while(change.next()) {
                     if (change.wasAdded()) {
-                        
+                        MarkPointCircle.Create(context.getPoints().get(context.getPoints().size() - 1), MarkPane);
                     }
                 }
             }
@@ -44,10 +44,7 @@ public class ImageViewerController implements IMarkPointSharer {
 
     private void addPoint(double x, double y){
         System.out.println("pos: " + x + ", " + y);
-        MarkPoint point = new MarkPoint();
-        point.setColor(Color.ALICEBLUE);
-        point.setName("Some point");
-        point.setPosition(new Point2D(x, y));
+        MarkPoint point = new MarkPoint("Some new point", x, y);
         context.getPoints().add(point);
     }
 
