@@ -11,8 +11,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.converter.DoubleStringConverter;
 
-import java.awt.event.MouseEvent;
-
 public class MarkPointTableController implements IMarkPointSharer {
 
     private MarkPointContext context;
@@ -34,6 +32,10 @@ public class MarkPointTableController implements IMarkPointSharer {
 
     @FXML
     public void initialize() {
+        setupTable();
+        setupContextMenu();
+    }
+    private void setupTable() {
         MarkPointTableName.setCellValueFactory(new PropertyValueFactory<MarkPoint, String>("name"));
         MarkPointTableName.setCellFactory(TextFieldTableCell.forTableColumn());
         MarkPointTableName.setOnEditCommit(e -> {
@@ -54,7 +56,8 @@ public class MarkPointTableController implements IMarkPointSharer {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPositionY(e.getNewValue());
         });
         MarkPointTablePositionY.setEditable(true);
-
+    }
+    private void setupContextMenu() {
         MarkPointContextMenuRemove.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
