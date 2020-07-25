@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Random;
 
 public class ImageMarkerController implements IMarkPointSharer {
 
@@ -53,7 +54,9 @@ public class ImageMarkerController implements IMarkPointSharer {
 
     private void addPoint(double x, double y) {
         System.out.println("pos: " + x + ", " + y);
-        MarkPoint point = new MarkPoint("Some new point", x, y);
+        Random random = new Random();
+        Color color = Color.rgb(random.nextInt(0xFF), random.nextInt(0xFF), random.nextInt(0xFF));
+        MarkPoint point = new MarkPoint("Point", x, y, color);
         context.getPoints().add(point);
     }
 

@@ -12,7 +12,7 @@ public class MarkPointCircle extends Circle {
     private MarkPoint markPoint;
 
     private MarkPointCircle() {
-        super(0, 0, 2);
+        super(0, 0, 3);
     }
 
     public static MarkPointCircle Create(MarkPoint markPoint, Pane parentPane) {
@@ -21,6 +21,7 @@ public class MarkPointCircle extends Circle {
         markPointCircle.parentPane = parentPane;
         markPointCircle.centerXProperty().bindBidirectional(markPoint.positionXProperty());
         markPointCircle.centerYProperty().bindBidirectional(markPoint.positionYProperty());
+        markPointCircle.fillProperty().bind(markPoint.colorProperty());
 
         markPointCircle.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
             @Override

@@ -1,14 +1,14 @@
 package PixelRTGHelper;
 
+import com.sun.javafx.css.converters.ColorConverter;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.util.converter.DoubleStringConverter;
 
 public class MarkPointTableController implements IMarkPointSharer {

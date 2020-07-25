@@ -13,7 +13,7 @@
         </ContextMenu>
     </contextMenu>
     <columns>
-        <TableColumn fx:id="MarkPointTableName" prefWidth="110.0" text="Name">
+        <TableColumn fx:id="MarkPointTableName" prefWidth="120.0" text="Name">
             <cellValueFactory>
                 <PropertyValueFactory property="name"/>
             </cellValueFactory>
