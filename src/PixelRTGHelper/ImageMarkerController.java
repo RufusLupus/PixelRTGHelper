@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ImageViewerController implements IMarkPointSharer {
+public class ImageMarkerController implements IMarkPointSharer {
 
     private MarkPointContext context;
 

@@ -17,15 +17,15 @@ public class MainWindowController {
     private MarkPointTableController MarkPointTableController;
 
     @FXML
-    private ImageViewerController ImageViewerTopLeftController;
+    private ImageMarkerController ImageMarkerTopLeftController;
     @FXML
-    private ImageViewerController ImageViewerTopRightController;
+    private ImageMarkerController ImageMarkerTopRightController;
     @FXML
-    private ImageViewerController ImageViewerBottomLeftController;
+    private ImageMarkerController ImageMarkerBottomLeftController;
     @FXML
-    private ImageViewerController ImageViewerBottomRightController;
+    private ImageMarkerController ImageMarkerBottomRightController;
 
-    private ArrayList<ImageViewerController> imageViewerControllers;
+    private ArrayList<ImageMarkerController> imageMarkerControllers;
 
     @FXML
     public void initialize() {
@@ -45,14 +45,14 @@ public class MainWindowController {
         markPointContext.setImage(image);
     }
     private void setupImageMarkerControllers() {
-        imageViewerControllers = new ArrayList<ImageViewerController>();
-        imageViewerControllers.add(ImageViewerTopLeftController);
-        imageViewerControllers.add(ImageViewerTopRightController);
-        imageViewerControllers.add(ImageViewerBottomLeftController);
-        imageViewerControllers.add(ImageViewerBottomRightController);
+        imageMarkerControllers = new ArrayList<ImageMarkerController>();
+        imageMarkerControllers.add(ImageMarkerTopLeftController);
+        imageMarkerControllers.add(ImageMarkerTopRightController);
+        imageMarkerControllers.add(ImageMarkerBottomLeftController);
+        imageMarkerControllers.add(ImageMarkerBottomRightController);
     }
     private void setupSubcontrollersContext() {
-        imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
+        imageMarkerControllers.forEach((controller) -> controller.setContext(markPointContext));
         MarkPointTableController.setContext(markPointContext);
     }
 }
