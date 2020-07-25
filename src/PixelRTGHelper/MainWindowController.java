@@ -1,22 +1,12 @@
 package PixelRTGHelper;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
-import javafx.util.Callback;
-import javafx.util.converter.DoubleStringConverter;
-import javafx.util.converter.NumberStringConverter;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainWindowController {
 
@@ -39,13 +29,9 @@ public class MainWindowController {
 
     @FXML
     public void initialize() {
-        imageViewerControllers = new ArrayList<ImageViewerController>();
-        imageViewerControllers.add(ImageViewerTopLeftController);
-        imageViewerControllers.add(ImageViewerTopRightController);
-        imageViewerControllers.add(ImageViewerBottomLeftController);
-        imageViewerControllers.add(ImageViewerBottomRightController);
         markPointContext = new MarkPointContext();
-        setSubcontrollersContext();
+        setupImageMarkerControllers();
+        setupSubcontrollersContext();
     }
 
     @FXML
@@ -61,8 +47,14 @@ public class MainWindowController {
         CurrentImage = new Image(file.toURI().toString());
         imageViewerControllers.forEach((controller) -> controller.setImage(CurrentImage));
     }
-
-    private void setSubcontrollersContext() {
+    private void setupImageMarkerControllers() {
+        imageViewerControllers = new ArrayList<ImageViewerController>();
+        imageViewerControllers.add(ImageViewerTopLeftController);
+        imageViewerControllers.add(ImageViewerTopRightController);
+        imageViewerControllers.add(ImageViewerBottomLeftController);
+        imageViewerControllers.add(ImageViewerBottomRightController);
+    }
+    private void setupSubcontrollersContext() {
         imageViewerControllers.forEach((controller) -> controller.setContext(markPointContext));
         MarkPointTableController.setContext(markPointContext);
     }
