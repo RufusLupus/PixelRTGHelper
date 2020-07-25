@@ -41,9 +41,13 @@ public class MainWindowController {
         FileChooser filePicker = new FileChooser();
         filePicker.setTitle("Open image");
         File file = filePicker.showOpenDialog(MainView.getScene().getWindow());
-        Image image = new Image(file.toURI().toString());
-        markPointContext.setImage(image);
+        if (file != null) {
+            Image image = new Image(file.toURI().toString());
+            markPointContext.setImage(image);
+            markPointContext.getPoints().clear();
+        }
     }
+
     private void setupImageMarkerControllers() {
         imageMarkerControllers = new ArrayList<ImageMarkerController>();
         imageMarkerControllers.add(ImageMarkerTopLeftController);
