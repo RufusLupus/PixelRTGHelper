@@ -1,6 +1,8 @@
 package PixelRTGHelper;
 
+import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
@@ -19,7 +21,14 @@ public class MarkPointCircle extends Circle {
         markPointCircle.parentPane = parentPane;
         markPointCircle.centerXProperty().bindBidirectional(markPoint.getPositionXProperty());
         markPointCircle.centerYProperty().bindBidirectional(markPoint.getPositionYProperty());
-        markPointCircle.parentPane = parentPane;
+
+        markPointCircle.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent e) {
+                markPointCircle.setPosition(e.getX(), e.getY());
+            }
+        });
+
         parentPane.getChildren().add(markPointCircle);
 
         return markPointCircle;
@@ -27,5 +36,9 @@ public class MarkPointCircle extends Circle {
 
     private void removeItself() {
         parentPane.getChildren().remove(this);
+    }
+    private void setPosition(double x, double y) {
+        this.setCenterX(x);
+        this.setCenterY(y);
     }
 }
