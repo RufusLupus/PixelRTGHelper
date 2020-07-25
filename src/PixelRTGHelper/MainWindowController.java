@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainWindowController {
 
-    private Image CurrentImage;
+
     private MarkPointContext markPointContext;
 
     @FXML
@@ -41,11 +41,8 @@ public class MainWindowController {
         FileChooser filePicker = new FileChooser();
         filePicker.setTitle("Open image");
         File file = filePicker.showOpenDialog(MainView.getScene().getWindow());
-        if (CurrentImage != null) {
-            // TODO: dispose
-        }
-        CurrentImage = new Image(file.toURI().toString());
-        imageViewerControllers.forEach((controller) -> controller.setImage(CurrentImage));
+        Image image = new Image(file.toURI().toString());
+        markPointContext.setImage(image);
     }
     private void setupImageMarkerControllers() {
         imageViewerControllers = new ArrayList<ImageViewerController>();

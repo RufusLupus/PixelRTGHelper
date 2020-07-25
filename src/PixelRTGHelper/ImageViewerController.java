@@ -22,13 +22,6 @@ public class ImageViewerController implements IMarkPointSharer {
     @FXML
     private ImageView ImageView;
 
-    public void setImage(Image image) {
-        ImageView.setImage(image);
-        MarkPane.setPrefSize(image.getWidth(), image.getHeight());
-        MarkPane.setMaxSize(image.getWidth(), image.getHeight());
-        MarkPane.setMinSize(image.getWidth(), image.getHeight());
-    }
-
     @Override
     public void setContext(MarkPointContext context) {
         this.context = context;
@@ -48,6 +41,12 @@ public class ImageViewerController implements IMarkPointSharer {
                         }
                     }
                 }
+            }
+        });
+        this.context.registerImageListener(new ImageListener() {
+            @Override
+            public void ImageChanged(Image newImage) {
+                setImage(newImage);
             }
         });
     }
@@ -75,6 +74,13 @@ public class ImageViewerController implements IMarkPointSharer {
             } else
                 return false;
         });
+    }
+
+    private void setImage(Image image) {
+        ImageView.setImage(image);
+        MarkPane.setPrefSize(image.getWidth(), image.getHeight());
+        MarkPane.setMaxSize(image.getWidth(), image.getHeight());
+        MarkPane.setMinSize(image.getWidth(), image.getHeight());
     }
 
     @FXML
