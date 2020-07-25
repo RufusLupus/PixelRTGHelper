@@ -24,6 +24,9 @@ public class MarkPointTableController implements IMarkPointSharer {
     private TableColumn<MarkPoint, Double> MarkPointTablePositionX;
     @FXML
     private TableColumn<MarkPoint, Double> MarkPointTablePositionY;
+    @FXML
+    private TableColumn<MarkPoint, Color> MarkPointTableColor;
+
 
     @FXML
     private ContextMenu MarkPointContextMenu;
@@ -56,6 +59,8 @@ public class MarkPointTableController implements IMarkPointSharer {
             e.getTableView().getItems().get(e.getTablePosition().getRow()).setPositionY(e.getNewValue());
         });
         MarkPointTablePositionY.setEditable(true);
+
+        MarkPointTableColor.setCellValueFactory(new PropertyValueFactory<MarkPoint, Color>("color"));
     }
     private void setupContextMenu() {
         MarkPointContextMenuRemove.setOnAction(new EventHandler<ActionEvent>() {

@@ -13,20 +13,13 @@
         </ContextMenu>
     </contextMenu>
     <columns>
-        <TableColumn fx:id="MarkPointTableName" prefWidth="120.0" text="Name">
-            <cellValueFactory>
-                <PropertyValueFactory property="name"/>
-            </cellValueFactory>
+        <TableColumn fx:id="MarkPointTableName" prefWidth="100.0" text="Name">
         </TableColumn>
         <TableColumn fx:id="MarkPointTablePositionX" prefWidth="40.0" text="X">
-            <cellValueFactory>
-                <PropertyValueFactory property="positionX"/>
-            </cellValueFactory>
         </TableColumn>
         <TableColumn fx:id="MarkPointTablePositionY" prefWidth="40.0" text="Y">
-            <cellValueFactory>
-                <PropertyValueFactory property="positionY"/>
-            </cellValueFactory>
+        </TableColumn>
+        <TableColumn fx:id="MarkPointTableColor" prefWidth="18.0" text="C">
         </TableColumn>
     </columns>
 </TableView>
